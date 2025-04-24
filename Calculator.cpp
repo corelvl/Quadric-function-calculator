@@ -8,6 +8,8 @@
 
 using namespace std;
 
+//Main menu logic
+
 int main()
 {
 	while (true) {
