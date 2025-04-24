@@ -3,15 +3,17 @@
 #include <windows.h>
 
 using namespace std;
-
+//Colors in cmd using windows api.
 void cmdc(int color) {
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
 }
 
+//Clear screen.
 void cls() {
 	system("cls");
 }
 
+//Utility function for getting back to the menu.
 void get_back() {
 	cmdc(9);
 	cout << "\n\n\n";
@@ -20,13 +22,14 @@ void get_back() {
 	cin.ignore();
 }
 
+//Information about quadric function.
 void information() {
 	cls();
 	cmdc(11);
-	cout << "Delta information:\n";
-	cout << "- If Delta > 0: 2 roots\n";
-	cout << "- If Delta = 0: 1 root\n";
-	cout << "- If Delta < 0: 0 roots\n";
+	cout << "Discriminant information:\n";
+	cout << "- If Discriminant > 0: 2 roots\n";
+	cout << "- If Discriminant = 0: 1 root\n";
+	cout << "- If Discriminant < 0: 0 roots\n";
 	cout << "\n\n";
 	cmdc(10);
 	cout << "Parabola openings:";
@@ -89,7 +92,7 @@ void formulas() {
 }
 
 
-//Functions not written by me, these functions change decimals in to fractions
+//Functions not written by me, these functions change decimals in to fractions.
 int gcd(int a, int b) {
 	return b == 0 ? a : gcd(b, a % b);
 }
@@ -123,10 +126,10 @@ void decimalToFraction(double value, int max_denominator = 1000) {
 
 	cout << best_numerator << "/" << best_denominator;
 }
-//Functions not written by me, these functions change decimals in to fractions
+//Functions not written by me, these functions change decimals in to fractions.
 
 
-
+//The main logic of the program, it does the calculations after providing a,b and c.
 void function_math(int a, int b, int c) {
 	bool running = false;
 	cls();
@@ -512,7 +515,7 @@ void function_math(int a, int b, int c) {
 
 }
 
-
+//This function allows user to change the values of a, b and c.
 void fix(int a, int b, int c) {
 	bool running = false;
 
@@ -556,7 +559,7 @@ void fix(int a, int b, int c) {
 
 
 
-
+//This function allows the user to input a, b and c.
 void function() {
 	bool running = true;
 	while (running)
@@ -619,13 +622,13 @@ void function() {
 		{
 		case 1:
 			function_math(a,b,c);
-			return; //Important gives an option to get back after these functions
+			return;
 		case 2:
 			fix(a,b,c);
-			return; //Important gives an option to get back after these functions
+			return;
 		}
 	}
 
 }
-// function ---> function_math but if "I want to make a change used" then function ---> fix ---> function_math
+
 
