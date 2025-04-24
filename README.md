@@ -1,8 +1,8 @@
 # Quadric-function-calculator
 
-Description
 A simple C++ program that calculates discriminant, roots and every other form of quadric function, everything you have to do is input a,b and c.
 Its one of my first projects in C++.
+Its windows only, linux verision may appear in future releases.
 
 File Structure
 
